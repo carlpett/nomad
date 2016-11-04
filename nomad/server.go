@@ -234,6 +234,7 @@ func NewServer(config *Config, consulSyncer *consul.Syncer, logger *log.Logger) 
 	}
 
 	// Initialize the RPC layer
+
 	if err := s.setupRPC(tlsWrap); err != nil {
 		s.Shutdown()
 		s.logger.Printf("[ERR] nomad: failed to start RPC layer: %s", err)
